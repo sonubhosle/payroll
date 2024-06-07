@@ -1,0 +1,88 @@
+.auth_section{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.auth_section form{
+    width: 40%;
+    height: auto;
+    position: relative;
+    background-color: var(--bg-white);
+    padding: 20px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--box-shadow-light);
+    border-radius: 3px;
+}
+.auth_section form h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.auth_section form p{
+    text-align: center;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--text-light);
+}
+.auth_section .input_group{
+    width: 100%;
+    height: 45px;
+    position: relative;
+    margin: 50px 0px;
+}
+.auth_section .input_group .label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    color: var(--text-dark-light);
+    font-weight: 500;
+}
+
+.auth_section .input_group .label a{
+    text-decoration: none;
+    color: var(--text-light);
+
+}
+.auth_section .input_group input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 17px;
+}
+
+.auth_section .input_group .password-toggle{
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--text-light);
+}
+.auth_section .input_group .submit_btn{
+    width: 100%;
+    height: 55px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: var(--bg-buttons);
+    color: var(--text-white);
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.auth_section form .bottom_text{
+    letter-spacing: 0px;
+}
+
+.auth_section form .bottom_text a{
+    color: var(--bg-orange);
+}
