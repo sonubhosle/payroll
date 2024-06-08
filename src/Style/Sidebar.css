@@ -1,12 +1,16 @@
 .sidebar {
   height: 100vh;
-  width: 250px;
+  width: 300px;
   z-index: 99;
   background-color: var(--bg-sidebar);
   transition: all .5s ease;
   position: fixed;
   top: 0;
   left: 0;
+  height: 100vh;
+  overflow: auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .sidebar.open {
@@ -17,9 +21,11 @@
   height: 60px;
   display: flex;
   align-items: center;
-  position: relative;
+  position: sticky;
   background-color: var(--bg-orange-light);
 padding-left: 8px;
+top: 0;
+z-index: 99;
 }
 
 .sidebar .logo_details .icon {
@@ -82,190 +88,117 @@ padding-left: 8px;
 }
 
 .sidebar .nav-list {
-  margin-top: 20px;
   height: 100%;
+  margin: 5px 10px;
+
 }
 
-.sidebar li {
+
+
+.nav-list  .dashboard_dropdown {
   position: relative;
-  margin: 8px 10px;
-  list-style: none;
-}
-
-.sidebar li .tooltip {
-  position: absolute;
-  top: -20px;
-  left: calc(100% + 15px);
-  z-index: 3;
-  background-color: var(--bg-white);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  padding: 6px 14px;
-  font-size: 15px;
-  font-weight: 400;
-  border-radius: 5px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  left: -250px;
-}
-
-.sidebar li:hover .tooltip {
-  opacity: 1;
-  pointer-events: auto;
-  transition: all 0.4s ease;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.sidebar.open li .tooltip {
-  display: block;
-  left: 65px;
-
-
-}
-
-.sidebar li a {
-  display: flex;
-  height: 100%;
+  display: inline-block;
   width: 100%;
-  align-items: center;
-  text-decoration: none;
-  position: relative;
-  transition: all .5s ease;
-  z-index: 12;
 }
 
-.sidebar li a i {
-  color: var(--text-light);
-  font-size: 22px;
-  transition: all .5s ease;
-
-}
-
-
-.sidebar li a .link_name {
-  color: var(--text-light);
-  font-size: 17px;
-  font-weight: 400;
-  white-space: nowrap;
-  pointer-events: auto;
-  transition: all 0.4s ease;
-  pointer-events: none;
-  opacity: 1;
-}
-
-.sidebar li a .right-icon {
-  position: absolute;
-  right: 0px;
-  top: 1px;
-}
-
-.sidebar li a:hover .link_name,
-.sidebar li a:hover i {
-  transition: all 0.5s ease;
-  color: var(--text-white)
-}
-
-.sidebar.open li a .link_name {
-  opacity: 0;
-  pointer-events: auto;
-}
-
-.sidebar li i {
-  height: 35px;
-  line-height: 35px;
-  font-size: 18px;
-  border-radius: 5px;
-}
-
-.sidebar li.profile {
-  position: absolute;
-  height: 60px;
-  width: 220px;
-  bottom: 40px;
-  padding: 10px 14px;
-  overflow: hidden;
-  transition: all .5s ease;
-  background-color: rgba(255, 255, 255, 0.045);
-  border-radius: 5px;
+.nav-list .heading{
   display: flex;
   align-items: center;
+  gap: 5px;
+  margin: 15px 0px 10px 0px;
+  color: var(--text-white);
+  font-size: 14px;
 }
-
-.sidebar.open li.profile {
-  width: 78px;
-  left: 0;
-  background: none;
-}
-
-.sidebar .profile .profile_details {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.sidebar li img {
-  height: 45px;
-  width: 45px;
-  object-fit: cover;
+.nav-list .heading p{
+  width: 5px;
+  height: 5px;
+  background-color: var(--bg-orange);
   border-radius: 50%;
-  margin-right: 10px;
 }
 
-.sidebar li.profile .name {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text-white);
-  white-space: nowrap;
-  padding-bottom: 1px;
-}
 
-.sidebar li.profile .designation {
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--text-white);
-  white-space: nowrap;
-}
-
-.sidebar li.profile .designation {
-  font-size: 12px;
-}
-
-.sidebar .profile #log_out {
-  position: absolute;
-  transform: translateY(50%);
-  width: 100%;
-  height: 67px;
-  line-height: 60px;
+ .dashboard_dropdown .dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: var(--text-light-1);
   cursor: pointer;
-  border-radius: 6px;
-  top: -40px;
-  left: 0;
-  transition: all .5s linear;
-
-}
-
-.sidebar.open #log_out {
-  background-color: var(--bg-sidebar);
-
-}
-
-.sidebar .chevron-right {
-  transform: rotate(-270deg);
   display: flex;
   align-items: center;
-  position: absolute;
-  right: -20px;
-  top: 2px;
-  height: 150px;
-  width: 100px;
-  color:var(--text-light);
+  justify-content: space-between;
+  border-radius: 3px;
+  column-gap: 5px;
+  width: 100%;
+  height: 35px;
+  padding: 0px 0px 0px 15px;
+  transition: 0.5s ease;
 }
 
-.sidebar.open .chevron-right {
-  transform: rotate(-0deg);
-  left: 28px;
-  top: -40px;
-  right: 100px;
+.dashboard_dropdown .dropdown-toggle:hover{
+color: var(--text-white);
 
-} 
+}
+
+.dashboard_dropdown .dropdown-toggle p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.dashboard_dropdown .dropdown-toggle img{
+  width: 35px;
+}
+
+ .arrow i {
+  font-size: 25px;
+  color: var(--text-white);
+}
+
+ .arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.nav-list .dashboard-menu {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s linear;
+  background-color : var(  --bg-transparet-light);
+  border-radius: 5px;
+}
+
+.nav-list .dashboard-menu.open {
+  max-height: 100%;
+
+}
+
+.nav-list .dashboard-menu a{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  transition: 0.5s ease;
+  height: 30px;
+  width: 100%;
+  padding: 0px 20px;
+  gap: 20px;
+  font-size: 15px;
+  color: var(--text-light-1);
+  width: 100%;
+}
+
+.nav-list .dashboard-menu a p{
+  width: 5px;
+  height: 5px;
+  background-color: var(--bg-orange);
+  border-radius: 50%;
+}

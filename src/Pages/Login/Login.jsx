@@ -29,7 +29,6 @@ const Login = () => {
         </div>
         <div className="input_group">
           <div className="label">Password  <Link to={'/forgot_password'}>Forgot Password?</Link></div>
-          <input type="password" name='password' />
           <input type={showPassword ? "text" : "password"} name='password' />
           <div  className="password-toggle" onClick={togglePasswordVisibility}>
             {showPassword ? <FaEye /> :  <FaEyeSlash /> }
