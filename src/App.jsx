@@ -8,7 +8,7 @@ import Signup from './Pages/Signup/Signup';
 import Forgot_Password from './Pages/Forgot_Password/Forgot_Password';
 import { AuthProvider, useAuth } from './Components/Auth/Auth';
 import Protected_Routes from './Components/Protected_Routes/Protected_Routes';
-
+import Header from './Components/Header/Header'
 const App = () => {
   return (
     <AuthProvider>
@@ -24,10 +24,22 @@ const MainApp = () => {
   const location = useLocation();
   const hideSidebarRoutes = ['/login', '/signup', '/forgot_password'];
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <>
-      {isAuthenticated && !hideSidebarRoutes.includes(location.pathname) && <Sidebar />}
-      <Routes>
+   
+      {isAuthenticated && !hideSidebarRoutes.includes(location.pathname) &&  <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />}
+      <div className={`main-content ${isSidebarOpen ? 'open' : 'closed'}`}>
+      {isAuthenticated && !hideSidebarRoutes.includes(location.pathname) && <Header />}
+
+     <main>
+      
+     <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/forgot_password' element={<Forgot_Password />} />
@@ -36,6 +48,8 @@ const MainApp = () => {
           {/* Add more protected routes here if needed */}
         </Route>
       </Routes>
+     </main>
+     </div>
     </>
   );
 };

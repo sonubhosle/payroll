@@ -16,6 +16,7 @@
     border: 1px solid var(--border-light);
     box-shadow: var(--box-shadow-light);
     border-radius: 3px;
+    margin-left: -270px;
 }
 .auth_section form h2{
     text-align: center;

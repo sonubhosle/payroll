@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <header className='flex'>
+    <header className=' flex '>
       <div className="logo">
         <Link to='/'>Dreams Technologies</Link>
       </div>
