@@ -28,8 +28,10 @@ body {
   --text-white: #ffffff;
   --border-light: #e2e2e2;
   --bg-orange: #FB7700;
-  --box-shadow-light: rgba(0, 0, 0, 0.090) 0px 0px 5px 0px;
+  --text-orange: #FB7700;
+  --box-shadow-light: rgba(0, 0, 0, 0.090) 0px 0px 15px 0px;
   --bg-orange-light: #FF8F31;
+  --bg-orange-light-2: #ff8e3146;
   --bg-transparet-light: rgba(255, 255, 255, 0.123);
 }
 
@@ -65,7 +67,7 @@ li {
 
 .main-content {
   flex-grow: 1;
-  transition: margin-left 0.3s;
+  transition: margin-left .5s ease;
 }
 
 .main-content.closed {
@@ -74,4 +76,9 @@ li {
 
 .main-content.open {
   margin-left: 80px;
+}
+
+/* Main Class */
+.main{
+  padding: 20px;
 }

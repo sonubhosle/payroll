@@ -1,0 +1,107 @@
+.statistics_section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+    gap: 20px;
+    position: relative;
+}
+
+.statistics_section h2{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-dark);
+    display: flex;
+    gap: 15px;
+}
+
+.statistics_section h2 p{
+    background-color: rgba(220, 20, 60, 0.226);
+    padding: 0px 10px;
+    border-radius: 4px;
+}
+.statistics_section .statistics{
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-white);
+    position: relative;
+    padding:15px;
+}
+
+.statistics .box-stat{
+    border: 1px solid var(--bg-light);
+    margin: 15px 0px 10px 0px;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.statistics .box-stat .up_text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.statistics .box-stat .up_text .title{
+    color: var(--text-light);
+}
+
+.statistics .box-stat .up_text .stat{
+    color: var(--text-light);
+    font-size: 15px;
+}
+
+.statistics .box-stat .bar{
+    background-color: var(--bg-light);
+    height: 6px;
+    width: 100%;
+    position: relative;
+    border-radius: 4px;
+
+}
+
+.statistics .box-stat .bar::after{
+    width: 50%;
+    height: 100%;
+    background-color: crimson;
+    content: '';
+    position:absolute;
+    border-radius: 4px;
+    left: 0;
+    top: 0;
+}
+
+.statistics_section .employee_absenty{
+    width: 100%;
+    height: 400px;
+    background-color: var(--bg-white);
+    position: relative;
+    padding:15px;
+    overflow: auto;
+}
+
+.employee_absenty .box-emp{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+    border: 1px solid var(--bg-light);
+    border-radius: 5px;
+    margin: 15px 0px 10px 0px;
+}
+
+.employee_absenty .box-emp .user_profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.box-emp .user_profile img{
+    width: 40px;
+    height: 40px;
+}
+
+.box-emp .details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}

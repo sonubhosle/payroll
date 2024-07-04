@@ -1,0 +1,58 @@
+
+.employee_form form {
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-white);
+    border-radius: 6px;
+    display: block;
+    align-items: normal;
+    position: relative;
+    padding: 30px 20px;
+}
+
+.employee_form form .form_heading{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+.employee_form form .input_group{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding:  6px 0px;
+    gap: 20px;
+    align-items: normal;
+}
+
+.employee_form form .input_group .input_box{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.input_group .input_box .name{
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.input_group .input_box input{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: 1px solid var(--border-light);
+    padding-left: 15px;
+    border-radius: 5px;
+}
+
+
+.input_group  button{
+    height: 50px;
+    background-color: var(--bg-orange);
+    width: 200px;
+    color: var(--text-white);
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 40px;
+
+}
